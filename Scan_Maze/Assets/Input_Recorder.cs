@@ -6,7 +6,7 @@ public class Input_Recorder : MonoBehaviour
     private static bool active = false;
     private static KeyCode input = KeyCode.None;
     public Texture UpBtn, LeftBtn, RightBtn;
-    public bool UpHUD = false, LeftHUD = false, RightHUD = false;
+    public bool UpHUD, LeftHUD, RightHUD;
     private bool inTrigger = false;
     private Rect UpBtnContainer = new Rect(140, 140, 0, 0),//(Screen.width/2 - (Screen.width / 40), Screen.height - 50, Screen.width/20, Screen.height/20),
                  LeftBtnContainer = new Rect(Screen.width/3, Screen.height - 50, Screen.width / 20, Screen.height / 20),
@@ -65,13 +65,17 @@ public class Input_Recorder : MonoBehaviour
     {
         if (inTrigger == true)
         {
-            if(LeftHUD == true & Input.GetKeyDown("d"))
+            if(LeftHUD == true & Input.GetKeyDown("a"))
+            {
+                input = KeyCode.A;
+            }
+            if (RightHUD == true & Input.GetKeyDown("d"))
             {
                 input = KeyCode.D;
             }
-            if (RightHUD == true & Input.GetKeyDown("a"))
+            if (UpHUD == true & Input.GetKeyDown("w"))
             {
-                input = KeyCode.A;
+                input = KeyCode.W;
             }
 
         }
